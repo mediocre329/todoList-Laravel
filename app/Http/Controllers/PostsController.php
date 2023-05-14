@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -11,6 +12,11 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $todolists = DB::insert('INSERT INTO todolists (title, description) VALUES (?, ?)', [
+            'test', 'test'
+        ]);
+
+        dd($todolists);
         return view('todolist.trial');
     }
 
@@ -43,6 +49,7 @@ class PostsController extends Controller
      */
     public function edit(string $id)
     {
+        
         return view('todolist.edit');
     }
 

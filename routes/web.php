@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/create', [PostsController::class, 'create'])->name('todolist.create');
+Route::get('/trial', [PostsController::class, 'index'])->name('todolist.trial');
+Route::post('create', [UserController::class, 'create'])->name('views.welcome');
 // Route::get('/edit/{id}', [PostsController::class, 'edit'])->name('todolist.edit');
 
 Route::resource('todolist', PostsController::class);
