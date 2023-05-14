@@ -1,0 +1,1 @@
+<h1>Delete Resource!!</h1>
